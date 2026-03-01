@@ -10,11 +10,11 @@ router = APIRouter(
 
 @router.post("/signup")
 def signup(data: SignUpSchema):
-    return signup_user
+    return signup_user(data)
 
 @router.post("/login")
 def login(data: LoginSchema):
-    return login_user
+    return login_user(data)
 
 @router.get("/me")
 def get_me(current_user=Depends(get_current_user)):
